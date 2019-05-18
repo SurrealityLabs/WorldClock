@@ -176,7 +176,7 @@ void setup(void) {
 
   setTime(getHwTime());
   setSyncProvider(getHwTime);
-  setSyncInterval(600);
+  setSyncInterval(60);
 
   Wire.begin();
   Wire.setClock(10000);
@@ -211,8 +211,8 @@ void loop(void) {
     easternMatrix.writeDigitRaw(0, 0x00);
   }
   easternMatrix.writeDigitNum(1, hourOnes, true);
-  easternMatrix.writeDigitNum(2, minuteTens, false);
-  easternMatrix.writeDigitNum(3, minuteOnes, false);
+  easternMatrix.writeDigitNum(3, minuteTens, false);
+  easternMatrix.writeDigitNum(4, minuteOnes, false);
   easternMatrix.writeDisplay();
 
   breakTime(pacific_t, nowTime);
@@ -226,8 +226,8 @@ void loop(void) {
     pacificMatrix.writeDigitRaw(0, 0x00);
   }
   pacificMatrix.writeDigitNum(1, hourOnes, true);
-  pacificMatrix.writeDigitNum(2, minuteTens, false);
-  pacificMatrix.writeDigitNum(3, minuteOnes, false);
+  pacificMatrix.writeDigitNum(3, minuteTens, false);
+  pacificMatrix.writeDigitNum(4, minuteOnes, false);
   pacificMatrix.writeDisplay();
   
   breakTime(indian_t, nowTime);
@@ -241,7 +241,7 @@ void loop(void) {
     indianMatrix.writeDigitRaw(0, 0x00);
   }
   indianMatrix.writeDigitNum(1, hourOnes, true);
-  indianMatrix.writeDigitNum(2, minuteTens, false);
-  indianMatrix.writeDigitNum(3, minuteOnes, false);
+  indianMatrix.writeDigitNum(3, minuteTens, false);
+  indianMatrix.writeDigitNum(4, minuteOnes, false);
   indianMatrix.writeDisplay();
 }
